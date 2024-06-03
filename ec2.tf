@@ -78,8 +78,8 @@ resource "aws_instance" "webserver" {
     sudo apt install apache2 php libapache2-mod-php php-mysql -y
 
     # Copy PHP files from local directory to web server root
-    sudo mkdir -p /var/www/html/myapp
-    sudo cp -r /tmp/php_files/* /var/www/html/myapp/
+  
+    sudo cp -r *.php /var/www/html/myapp/
     sudo chown -R www-data:www-data /var/www/html/myapp/*
     sudo systemctl restart apache2
       EOF
